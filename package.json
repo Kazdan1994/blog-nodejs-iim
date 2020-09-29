@@ -1,0 +1,25 @@
+{
+  "name": "blog-nodejs-iim",
+  "version": "1.0.0",
+  "description": "Un blog avec nodejs",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kazdan1994/blog-nodejs-iim.git"
+  },
+  "author": "Arthur Jacquemin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kazdan1994/blog-nodejs-iim/issues"
+  },
+  "homepage": "https://github.com/Kazdan1994/blog-nodejs-iim#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
