@@ -9,19 +9,21 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+
 <h1>Mon super blog</h1>
 <div class="container">
-    <% for(let i = 0; i < 5; i++) { %>
-        <a href="/post">
+
+    <% posts.forEach(function (post) { %>
+        <a href="/post/<%= post.slug %>">
             <div class="card">
-                <img src="/img/visual-reverse-image-search-v2_intro.jpg" alt="">
+                <img src="<%= post.image %>" alt="">
                 <div class="card-details">
-                    <h2>Mon post</h2>
-                    <p class="text-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur doloribus ea earum, harum maiores minima qui tempora temporibus ullam?</p>
+                    <h2><%= post.title %></h2>
+                    <p class="text-secondary"><%= post.description %></p>
                 </div>
             </div>
         </a>
-    <% } %>
+    <% }) %>
 </div>
 </body>
 </html>
