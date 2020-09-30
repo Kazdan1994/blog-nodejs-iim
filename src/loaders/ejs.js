@@ -1,4 +1,4 @@
-const ejs = require("ejs").__express;
+const ejs = require("ejs-locals");
 
 module.exports = function (app) {
     app.engine('ejs', ejs);
