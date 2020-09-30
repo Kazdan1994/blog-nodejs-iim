@@ -19,9 +19,15 @@
   "dependencies": {
     "ejs": "^3.1.5",
     "express": "^4.17.1",
-    "mongoose": "^5.10.7"
+    "mongoose": "^5.10.7",
+    "slug": "^3.3.5"
   },
   "devDependencies": {
+    "faker": "^5.1.0",
+    "mongoose-data-seed": "^2.1.6",
     "nodemon": "^2.0.4"
+  },
+  "mdSeed": {
+    "seedersFolder": "./src/db/seed"
   }
 }
