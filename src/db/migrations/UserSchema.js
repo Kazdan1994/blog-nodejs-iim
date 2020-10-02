@@ -10,6 +10,10 @@ const UserSchema = new Schema({
         unique: true,
     },
     password: String,
+    isConnected: {
+        type: Boolean,
+        default: false,
+    },
 });
 
 module.exports = UserSchema;

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const PostSeeder = require('./src/db/seed/posts.seeder');
+const UserSeeder = require('./src/db/seed/users.seeder');
 
 const mongoURL = 'mongodb://localhost/blog';
 
@@ -9,6 +10,7 @@ const mongoURL = 'mongodb://localhost/blog';
  * @type {Object}
  */
 const seedersList = {
+    UserSeeder,
     PostSeeder,
 };
 /**

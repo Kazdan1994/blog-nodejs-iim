@@ -5,7 +5,8 @@ exports.index = async function (req, res) {
 
     res.render('index', {
         title: 'Blog',
-        posts
+        posts,
+        user: res.locals.user
     });
 }
 
@@ -14,6 +15,7 @@ exports.show = async function (req, res) {
 
     res.render('show', {
         title: post.title,
-        post
+        post,
+        user: res.locals.user
     })
 }
