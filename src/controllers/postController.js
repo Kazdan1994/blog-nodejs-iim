@@ -31,3 +31,7 @@ exports.edit = async function (req, res) {
         title: 'Editer un article'
     })
 }
+
+exports.create = async function (req, res) {
+
+}

@@ -6,4 +6,5 @@ module.exports = function (app) {
     app.get('/post/new', PostMiddleware.isConnected, PostController.new)
     app.get('/post/edit/:post', PostMiddleware.isConnected, PostController.edit)
     app.get('/post/:post', PostMiddleware.isConnected, PostController.show)
+    app.post('/post/new', PostMiddleware.isConnected, PostController.create)
 }
