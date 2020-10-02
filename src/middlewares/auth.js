@@ -21,12 +21,17 @@ exports.createAccount = async function (req, res, next) {
     try {
         await schema.validateAsync(req.body);
 
-        const user = User.findOne({ email: req.body.email });
+        const user = await User.findOneAndUpdate(
+            {
+                email: req.body.email
+            }, {
+                isConnected: true
+            });
 
         if (user) {
             res.redirect('/');
         } else {
-            User.create(req.body);
+            await User.create(req.body);
 
             res.redirect('/');
         }
