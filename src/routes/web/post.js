@@ -1,5 +1,5 @@
-const PostController = require('../controllers/postController');
-const PostMiddleware = require('../middlewares/auth');
+const PostController = require('../../controllers/postController');
+const PostMiddleware = require('../../middlewares/auth');
 
 module.exports = function (app) {
     app.get('/', PostMiddleware.isConnected, PostController.index)

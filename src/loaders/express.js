@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require('path');
-const routes = require('../routes/index');
+const routes = require('../routes');
 
 module.exports = function (app) {
     app.use('/', express.static(path.resolve(__dirname, '../../public')));

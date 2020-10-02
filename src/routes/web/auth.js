@@ -1,5 +1,5 @@
-const AuthController = require('../controllers/AuthController');
-const AuthMiddleware = require('../middlewares/auth');
+const AuthController = require('../../controllers/authController');
+const AuthMiddleware = require('../../middlewares/auth');
 
 module.exports = function (app) {
     app.get('/register', AuthController.register);

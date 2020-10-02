@@ -1,12 +1,8 @@
 const Post = require('../db/models/postModel');
+const PostService = require('../services/postService');
 
 exports.index = async function (req, res) {
-    const posts = await Post
-        .find()
-        .sort({
-            updatedAt: -1,
-            createdAt: -1,
-        });
+    const posts = await PostService.find();
 
     res.render('index', {
         title: 'Blog',
