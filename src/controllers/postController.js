@@ -1,7 +1,12 @@
 const Post = require('../db/models/postModel');
 
 exports.index = async function (req, res) {
-    const posts = await Post.find();
+    const posts = await Post
+        .find()
+        .sort({
+            updatedAt: -1,
+            createdAt: -1,
+        });
 
     res.render('index', {
         title: 'Blog',
@@ -27,13 +32,28 @@ exports.new = async function (req, res) {
 }
 
 exports.edit = async function (req, res) {
+    const post = await Post.findOne({ slug: req.params.post })
+
     res.render('edit', {
-        title: 'Editer un article'
+        title: 'Editer un article',
+        post,
     })
 }
 
 exports.create = async function (req, res) {
-    const post = await Post.create(req.body);
+    await Post.create(req.body);
+
+    res.redirect('/');
+}
+
+exports.update = async function (req, res) {
+    await Post.updateOne({ slug: req.params.post }, req.body);
+
+    res.redirect('/');
+}
+
+exports.delete = async function (req, res) {
+    await Post.deleteOne({ slug: req.params.post });
 
     res.redirect('/');
 }

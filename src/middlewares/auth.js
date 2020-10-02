@@ -73,7 +73,7 @@ exports.signin = async function (req, res, next) {
 }
 
 exports.isConnected = async function (req, res, next) {
-    const user = await User.findOne({isConnected: true});
+    const user = await User.findOne({isConnected: true})
 
     if (!user) {
         res.redirect('/login');
