@@ -1,4 +1,3 @@
-const Post = require('../db/models/postModel');
 const PostService = require('../services/postService');
 
 exports.index = async function (req, res) {
@@ -12,7 +11,7 @@ exports.index = async function (req, res) {
 }
 
 exports.show = async function (req, res) {
-    const post = await Post.findOne({ slug: req.params.post });
+    const post = await PostService.findOne(req.params.post);
 
     res.render('show', {
         title: post.title,
@@ -28,7 +27,7 @@ exports.new = async function (req, res) {
 }
 
 exports.edit = async function (req, res) {
-    const post = await Post.findOne({ slug: req.params.post })
+    const post = await PostService.findOne(req.params.post)
 
     res.render('edit', {
         title: 'Editer un article',
@@ -37,19 +36,19 @@ exports.edit = async function (req, res) {
 }
 
 exports.create = async function (req, res) {
-    await Post.create(req.body);
+    await PostService.create(req.body);
 
     res.redirect('/');
 }
 
 exports.update = async function (req, res) {
-    await Post.updateOne({ slug: req.params.post }, req.body);
+    await PostService.updateOne(req.params.post, req.body);
 
     res.redirect('/');
 }
 
 exports.delete = async function (req, res) {
-    await Post.deleteOne({ slug: req.params.post });
+    await PostService.deleteOne(req.params.post);
 
     res.redirect('/');
 }
