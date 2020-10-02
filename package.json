@@ -19,6 +19,7 @@
   "dependencies": {
     "ejs-locals": "^1.0.2",
     "express": "^4.17.1",
+    "joi": "^17.2.1",
     "mongoose": "^5.10.7",
     "slug": "^3.3.5"
   },
