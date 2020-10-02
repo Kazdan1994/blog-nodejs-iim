@@ -19,3 +19,15 @@ exports.show = async function (req, res) {
         user: res.locals.user
     })
 }
+
+exports.new = async function (req, res) {
+    res.render('new', {
+        title: 'Ecrire un article'
+    })
+}
+
+exports.edit = async function (req, res) {
+    res.render('edit', {
+        title: 'Editer un article'
+    })
+}
