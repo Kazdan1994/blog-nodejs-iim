@@ -20,7 +20,7 @@ exports.create = async function (body) {
 }
 
 exports.updateOne = async function (slug, body) {
-    return Post.findOneAndUpdate({ slug }, body);
+    return Post.findOneAndUpdate({ slug }, body, { new: true });
 }
 
 exports.deleteOne = async function (slug) {
