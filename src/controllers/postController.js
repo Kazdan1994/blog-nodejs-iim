@@ -33,5 +33,7 @@ exports.edit = async function (req, res) {
 }
 
 exports.create = async function (req, res) {
+    const post = await Post.create(req.body);
 
+    res.redirect('/');
 }

@@ -1,13 +1,13 @@
-const { Schema } = require('mongoose');
+const mongoose = require('mongoose');
+const slug = require('mongoose-slug-updater')
 
-const PostSchema = new Schema({
-    title: {
-        type: String,
-        unique: true,
-    },
+mongoose.plugin(slug)
+
+const PostSchema = new mongoose.Schema({
+    title: String,
     slug: {
         type: String,
-        unique: true,
+        slug: 'title'
     },
     description: String,
     image: String,
